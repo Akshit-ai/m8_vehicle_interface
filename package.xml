@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>m8_vehicle_interface</name>
+  <version>0.0.1</version>
+  <description>Autoware Interface to the M8</description>
+  <maintainer email="autoware@todo.todo">AUTOWARE</maintainer>
+  <license>OWN-USE</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>zgw_interfaces</depend>
+  <depend>ins_interfaces</depend>
+  <depend>autoware_control_msgs</depend>
+  <depend>autoware_vehicle_msgs</depend>
+  <depend>tier4_control_msgs</depend>
+  <depend>tier4_vehicle_msgs</depend>
+  <!-- ADD HERE MORE PACKAGE DEPENDENCIES! -->
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
