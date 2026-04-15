@@ -4,7 +4,7 @@ void M8_Vehicle_Interface::vehicle_set_turn_lights(uint8_t command) {
     if (command != prev_turnlights_command) {
         auto turn_lights_request = std::make_shared<zgw_interfaces::srv::VehicleSetIndicator::Request>();
         turn_lights_request->signal = command > 2 /*3 = Hazard*/ ? 2 : command < 2 /* 0 or 1*/? command : /*2 = Right*/ 3;
-        turn_lights_request->header.stamp = this->now();
+        //turn_lights_request->header.stamp = this->now();
         auto result = turn_lights_command_client->async_send_request(turn_lights_request);
     }
 }

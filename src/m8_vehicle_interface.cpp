@@ -177,13 +177,13 @@ void M8_Vehicle_Interface::VehicleDataSubscriptionCallback(
     // Control Mode Report Publisher
     auto control_mode_report_msg = autoware_vehicle_msgs::msg::ControlModeReport();
     control_mode_report_msg.stamp = this->now();
-    control_mode_report_msg.mode = msg->control_mode;
+    control_mode_report_msg.mode = msg->autoware_control_mode;
     control_mode_pub_->publish(control_mode_report_msg);
     // Actuation Status Publisher
     auto actuation_status_msg = tier4_vehicle_msgs::msg::ActuationStatusStamped();
     actuation_status_msg.header.stamp = this->now();
     actuation_status_msg.status.accel_status = msg->pedal_pos_engine;
-    actuation_status_msg.status.brake_status = msg->pedal_pos_break;
+    actuation_status_msg.status.brake_status = msg->pedal_pos_brake;
     actuation_status_msg.status.steer_status = msg->steering_wheel_angle;
     actuation_status_pub_->publish(actuation_status_msg);
     // ...
